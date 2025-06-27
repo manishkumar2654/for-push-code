@@ -1,0 +1,18 @@
+const express = require("express");
+const app=express();
+const hbs = require("hbs")
+const bodyparser = require("body-parser");
+app.set("view engine", "hbs")
+
+app.use(bodyparser.urlencoded());
+app.use(bodyparser.json())
+
+
+app.get("/", (req, res)=>{
+    res.render("home"); 
+})
+
+
+app.listen(8000, ()=>{
+    console.log(`Server Run On Port 8000 wale port me`);
+})
