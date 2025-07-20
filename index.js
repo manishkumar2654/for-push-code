@@ -1,29 +1,39 @@
 const express = require("express");
-const app=express();
-const hbs = require("hbs")
-const StuRoute = require("./routes/studentRoutes");
-const bodyparser = require("body-parser");
+const app = express();
+require("dotenv").config();
+const port = process.env.PORT || 3000;
 
-app.set("view engine", "hbs")
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
-const sequelize = require('./config/database');
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(cookieParser());
 
-
-sequelize.sync({ force: true }).then(async () => {
-    console.log("Database synced!");
+// Set Cookie
+app.get("/setcookie", (req, res) => {
+  res.cookie("name", "manish", { maxAge: 60 * 1000 });
+  res.cookie("course", "java");
+  res.cookie("fees", "5000");
+  res.send("Cookies have been sent");
 });
 
-app.use(bodyparser.urlencoded());
-app.use(bodyparser.json())
+// Display Cookie
+app.get("/displaycookie", (req, res) => {
+  const { name, course, fees } = req.cookies;
+  res.send({ name, course, fees });
+});
 
+// Delete Cookie
+app.get("/deletecookie", (req, res) => {
+  res.clearCookie("name");
+  res.clearCookie("course");
+  res.clearCookie("fees");
+  res.send("Cookies deleted");
+});
 
-app.use("/students", StuRoute);
-
-app.get("/", (req, res)=>{
-    res.render("home"); 
-})
-
-
-app.listen(8000, ()=>{
-    console.log(`Server Run On Port 8000 wale port me`);
-})
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
