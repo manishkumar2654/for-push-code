@@ -1,0 +1,194 @@
+/* Registration Page Styles */
+:root {
+  --primary-color: #8e6c88; /* Elegant purple */
+  --secondary-color: #f4a261; /* Warm orange */
+  --accent-color: #e9c46a; /* Golden yellow */
+  --dark-color: #264653; /* Dark teal */
+  --light-color: #f8f9fa;
+  --success-color: #2a9d8f; /* Greenish teal */
+  --font-main: 'Poppins', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+}
+
+/* Form Container */
+form {
+  max-width: 500px;
+  width: 90%;
+  margin: 3rem auto !important;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Header */
+form h1 {
+  text-align: center;
+  color: var(--dark-color);
+  font-family: var(--font-secondary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+form h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 0.5rem auto 0;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  transition: all 0.3s ease;
+  background-color: var(--light-color);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(142, 108, 136, 0.2);
+  outline: none;
+}
+
+/* Submit Button */
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(142, 108, 136, 0.3);
+}
+
+/* Dog Paw Decorations */
+.form-group::after {
+  content: "🐾";
+  position: absolute;
+  right: -25px;
+  top: 35px;
+  font-size: 1rem;
+  opacity: 0.2;
+}
+
+/* Success Message */
+.alert-success {
+  background-color: var(--success-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Background Design */
+body {
+  background-color: #f5f7fa;
+  background-image: 
+    radial-gradient(circle at 25% 70%, rgba(142, 108, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 30%, rgba(244, 162, 97, 0.1) 0%, transparent 50%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-group {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+.form-group:nth-child(6) { animation-delay: 0.6s; }
+.btn-primary { animation-delay: 0.7s; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  form {
+    padding: 2rem;
+    margin: 2rem auto !important;
+  }
+  
+  form h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 1.5rem;
+  }
+  
+  form h1 {
+    font-size: 1.5rem;
+  }
+  
+  .form-control {
+    padding: 0.65rem 0.9rem;
+  }
+  
+  .btn-primary {
+    padding: 0.65rem;
+  }
+}
