@@ -1,0 +1,211 @@
+/* SaleProducts.css */
+
+/* Main page container */
+.products-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  min-height: 80vh;
+}
+
+/* Sale page title styling */
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #e74c3c; /* Red color for sale items */
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background-color: #e74c3c;
+}
+
+/* Sale banner */
+.sale-banner {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Products grid layout */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 10px;
+}
+
+/* Sale product card styling */
+.product-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #f1c40f; /* Gold border for sale items */
+}
+
+.product-card::before {
+  content: 'SALE';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(231, 76, 60, 0.2);
+  border-color: #e74c3c;
+}
+
+/* Card container */
+.product-card .card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Image container */
+.image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.1);
+}
+
+/* Product info */
+.card-body {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.product-description {
+  display: block;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Price styling - special for sale items */
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+.sale-price {
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 1.2rem;
+}
+
+.discount-badge {
+  background-color: #f1c40f;
+  color: #2c3e50;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .page-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-page {
+    padding: 20px 15px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .image-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .sale-banner {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
