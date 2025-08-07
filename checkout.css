@@ -1,0 +1,117 @@
+/* CheckOut.css */
+
+/* Main container styling */
+.checkout-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.checkout-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Amount display styling */
+.amount-display {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: 600;
+    border: 1px solid #e9ecef;
+}
+
+/* Form styling */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form group styling */
+.form-group-custom {
+    margin-bottom: 1rem;
+}
+
+/* Label styling */
+.form-label-custom {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Input field styling */
+.form-control-custom {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control-custom:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Read-only input styling */
+.read-only-input {
+    background-color: #f1f3f5 !important;
+    cursor: not-allowed;
+    border: 1px solid #dee2e6 !important;
+}
+
+/* Button styling */
+.checkout-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .checkout-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .checkout-title {
+        font-size: 1.7rem;
+    }
+    
+    .amount-display {
+        font-size: 1.3rem;
+    }
+}
