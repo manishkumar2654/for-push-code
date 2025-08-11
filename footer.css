@@ -1,0 +1,79 @@
+.footer {
+  background: linear-gradient(to right, #4ED7F1, #6FE6FC, #A8F1FF);
+  color: #000;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+.footer-brand h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.footer-reviews .stars {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: #FFFA8D;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.social-icons a:hover {
+  color: #FFFA8D;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
