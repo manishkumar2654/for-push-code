@@ -1,182 +1,166 @@
+/* admindashboard.css */
 
-
+/* New Brand Colors */
 :root {
-  --admin-primary: #6c5b7b; /* Muted purple */
-  --admin-secondary: #355c7d; /* Deep blue */
-  --admin-accent: #c06c84; /* Soft pink */
-  --admin-dark: #2a363b; /* Dark slate */
-  --admin-light: #f8f9fa;
-  --admin-success: #4e937a; /* Muted green */
-  --font-main: 'Poppins', sans-serif;
-  --font-secondary: 'Montserrat', sans-serif;
-
+  --aqua: #4ED7F1;
+  --sky: #6FE6FC;
+  --ice: #A8F1FF;
+  --soft-yellow: #FFFA8D;
+  --dark-blue: #29303E;
+  --bg-light: #6FE6FC;
+  --text-dark: #1a1a1a;
 }
 
-/* Admin Header */
+/* Page Container */
+.admindivv {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-light);
+  width: 1500px;
+  color: var(--text-dark);
+  padding: 20px;
+}
+
+/* Header */
 #adminheader {
-  background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary));
-  color: white;
-  padding: 1.5rem;
+  background: linear-gradient(90deg, var(--aqua), var(--sky), var(--soft-yellow));
+  padding: 15px 20px;
+  color: var(--dark-blue);
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 #adminheader h3 {
   margin: 0;
-  font-family: var(--font-secondary);
   font-weight: 600;
   letter-spacing: 0.5px;
+  font-size: 1.5rem;
 }
 
-/* Welcome Message */
-#adminheader + div {
-  padding: 1rem;
-  background-color: var(--admin-light);
-  text-align: right;
-  font-size: 0.9rem;
-  color: var(--admin-dark);
-}
-
-#adminheader + div a {
-  color: var(--admin-accent);
-  text-decoration: none;
-  margin-left: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-#adminheader + div a:hover {
-  color: var(--admin-primary);
-  text-decoration: underline;
-}
-
-/* Main Container */
-#container {
+/* Welcome Bar */
+.adminDBlogout {
   display: flex;
-  min-height: calc(100vh - 150px);
+  justify-content: space-between;
+  align-items: center;
+  background: var(--aqua);
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: var(--dark-blue);
 }
 
-/* Admin Menu */
+/* Dashboard Container */
+#adminDBcontainer {
+  display: flex;
+  gap: 20px;
+  min-height: calc(100vh - 200px);
+}
+
+/* Menu */
 #adminmenu {
+  background: var(--ice);
+  padding: 20px;
+  border-radius: 10px;
   width: 250px;
-  background-color: var(--admin-dark);
-  padding: 1.5rem 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
 }
 
-.nav.flex-column {
-  width: 100%;
-}
-
-.nav-link {
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.75rem 1.5rem;
-  margin: 0.25rem 0;
-  font-family: var(--font-main);
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-link.active {
+.flex-column-adminDB .nav-link {
+  display: block;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  color: var(--dark-blue);
   font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.nav-link.active::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background-color: var(--admin-accent);
+.flex-column-adminDB .nav-link:hover {
+  background: var(--aqua);
+  color: var(--dark-blue);
+  transform: translateX(4px);
 }
 
-/* Admin Content Area */
-#admindata {
+.flex-column-adminDB .nav-link.active {
+  background: var(--soft-yellow);
+  color: var(--dark-blue);
+}
+
+/* Data Display Section */
+#admindataDB {
   flex: 1;
-  padding: 2rem;
-  background-color: #f5f7fa;
-  width: 100%;
+  background: var(--ice);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
 }
 
-/* Responsive Adjustments */
+/* Buttons */
+.admiDBbutton {
+  background-color: var(--aqua);
+  color: var(--dark-blue);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admiDBbutton:hover {
+  background-color: var(--sky);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.admiDBbutton:active {
+  background-color: var(--soft-yellow);
+  transform: translateY(0px);
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
-  #container {
+  #adminDBcontainer {
     flex-direction: column;
   }
   
   #adminmenu {
     width: 100%;
-    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .admindivv {
+    padding: 15px;
   }
   
-  .nav.flex-column {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 0.5rem;
+  #adminheader h3 {
+    font-size: 1.3rem;
   }
   
-  .nav-link {
-    white-space: nowrap;
-    margin: 0 0.25rem;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-  }
-  
-  .nav-link.active::before {
-    width: 100%;
-    height: 3px;
-    top: auto;
-    bottom: 0;
+  .adminDBlogout {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 576px) {
-  #adminheader h3 {
-    font-size: 1.25rem;
+  #adminheader {
+    padding: 12px 15px;
   }
   
-  #admindata {
-    padding: 1rem;
+  #adminmenu, #admindataDB {
+    padding: 15px;
   }
   
-  .nav.flex-column {
-    padding: 0.25rem;
-  }
-  
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem;
+  .flex-column-adminDB .nav-link {
+    padding: 10px 12px;
+    font-size: 0.9rem;
   }
 }
-
-/* Special Elements */
-hr {
-  border: none;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 0;
-}
-
-/* Animation for menu items */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(-10px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-.nav-link {
-  animation: fadeIn 0.3s ease forwards;
-}
-
-.nav-link:nth-child(1) { animation-delay: 0.1s; }
-.nav-link:nth-child(2) { animation-delay: 0.2s; }
-.nav-link:nth-child(3) { animation-delay: 0.3s; }
-.nav-link:nth-child(4) { animation-delay: 0.4s; }
-.nav-link:nth-child(5) { animation-delay: 0.5s; }
