@@ -1,70 +1,172 @@
-.products-page {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* female.css */
+
+.products-pageWO {
+ width: 1520px;
+  background: linear-gradient(135deg, #A8F1FF, #6FE6FC);
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.page-title {
+.page-titleWO {
   text-align: center;
-  margin-bottom: 30px;
-  color: #333;
+  color: #4ED7F1;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 2px #6FE6FC;
 }
 
-.products-grid {
+.products-gridWO {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
 }
 
-.product-card {
-  transition: all 0.3s ease;
+/* Fixed height and flex layout for equal height cards */
+.product-cardWO {
+  background: linear-gradient(135deg, #6FE6FC 0%, #A8F1FF 100%);
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(78, 215, 241, 0.3);
+  cursor: pointer;
+  max-width: 220px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 350px; /* fixed equal height */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.product-cardWO:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(78, 215, 241, 0.55);
 }
 
-.image-container {
+.h-100WO {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.image-containerWO {
   position: relative;
-  height: 200px;
   overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+  height: 180px; /* fixed image height */
+  width: 140px;
+  margin-left: 40px;
 }
 
-.product-image {
+.product-imageWO {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image {
-  transform: scale(1.05);
+.product-cardWO:hover .product-imageWO {
+  transform: scale(1.07);
 }
 
-.quick-view {
+.quick-viewWO {
   position: absolute;
-  bottom: -40px;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.7);
-  color: white;
+  bottom: 10px;
+  right: 10px;
+  background-color: #FFFA8D;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.quick-viewWO:hover {
+  opacity: 1;
+}
+
+/* Card body fills remaining space with flexbox and consistent spacing */
+.d-flex.flex-columnWO {
+  padding: 0.6rem 0.8rem 0.8rem 0.8rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes button to bottom */
+}
+
+.card-title,
+.card-titleWO {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #4ED7F1;
+  margin-bottom: 0.3rem;
   text-align: center;
-  padding: 10px;
-  transition: bottom 0.3s ease;
+  line-height: 1.2;
+  min-height: 2.6rem; /* reserve space even if title wraps */
 }
 
-.product-card:hover .quick-view {
-  bottom: 0;
+.flex-grow-1WO {
+  font-size: 0.85rem;
+  color: #222;
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  min-height: 2.4rem; /* reserve consistent height */
 }
 
-.add-to-cart-btn {
-  margin-top: 15px;
-  width: 100%;
+.product-descriptionWO {
+  flex: 1 1 auto;
+  font-style: italic;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-priceWO {
+  font-weight: 700;
+  color: #FFFA8D;
+  background-color: #4ED7F1;
+  padding: 3px 8px;
+  border-radius: 15px;
+  min-width: 70px;
+  text-align: center;
+  box-shadow: 0 0 5px #FFFA8D;
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btnWO {
+  background: #10c04b;
+  border: none;
+  padding: 7px 0;
+  font-weight: 700;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(78, 215, 241, 0.45);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.add-to-cart-btnWO:hover {
+  background: #6FE6FC;
+  box-shadow: 0 5px 15px rgba(111, 230, 252, 0.7);
 }
 
 .loading {
+  font-size: 1.5rem;
+  color: #4ED7F1;
   text-align: center;
-  padding: 50px;
-  font-size: 1.2rem;
+  padding: 3rem;
+  font-weight: 600;
 }
