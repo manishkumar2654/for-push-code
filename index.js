@@ -1,21 +1,19 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const userRoutes = require("./routes/userRoute")
-
-
-const app = express();
-
-mongoose.connect("mongodb://localhost:27017/ekorcrudthekkkkk")
-.then(() => console.log("db conect hua"))
-.catch((err) => console.error("mongo wali errr yad hai"))
-
-
-app.use(cors());
-app.use(express.json());
-
-
-app.use("/", userRoutes);
-
-
-app.listen(7000, () => console.log("server chalu ho gya 7000 pr"))
+const cluster = require("cluster");
+const os = require("os");
+if (cluster.isMaster) {
+console.log(`Master ${process.pid} is running`);
+const numCPUs = os.cpus().length;
+for (let i = 0; i < numCPUs; i++) {
+const worker = cluster.fork();
+// Listen for messages from workers
+worker.on("message", (msg) => {
+console.log(`Message from Worker ${worker.process.pid}:`, msg);
+});
+}
+} else {
+console.log(`Worker ${process.pid} started`);
+// Send message to master every 2s
+setInterval(() => {
+process.send({ worker: process.pid, msg: "Hello Master!" });
+}, 2000);
+}
