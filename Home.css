@@ -1,0 +1,171 @@
+/* Body & overall layout */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f5f7;
+}
+
+.home {
+  padding: 20px;
+  height: 100%;
+}
+
+.home h2 {
+  color: #172b4d;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Add List Input */
+.add-list {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-list input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #dfe1e6;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+
+.add-list button {
+  background-color: #5aac44;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-list button:hover {
+  background-color: #519839;
+}
+
+/* Board Layout */
+.board {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+/* List Style */
+.list {
+  background-color: #ebecf0;
+  min-width: 280px;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* List Title */
+.list h3 {
+  margin: 0 0 10px 0;
+  color: #172b4d;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Add Card Input */
+.add-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.add-card input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #dfe1e6;
+  outline: none;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.add-card button {
+  background-color: #5aac44;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-card button:hover {
+  background-color: #519839;
+}
+
+/* Card Style */
+.card {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  cursor: grab;
+}
+
+.card p {
+  margin: 0;
+  flex: 1;
+  word-wrap: break-word;
+}
+
+/* Card Buttons */
+.card-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.card-buttons button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card-buttons button:hover {
+  color: #5aac44;
+}
+
+/* Scrollbar for Board */
+.board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board::-webkit-scrollbar-track {
+  background: #f4f5f7;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* Scrollbar for List */
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #ebecf0;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
