@@ -1,9 +1,14 @@
-const mongoose = require("mongoose");
-const taskSchema= new mongoose.Schema({
-    title:String,
-    description:String,
-    comday:Number,
-    userid:{type: mongoose.Types.ObjectId, ref: "user"}
-})
+const { default: mongoose } = require("mongoose");
+const mongooser = require("mongoose");
 
-module.exports = mongoose.model("task", taskSchema);
+const taskSchema = new mongooser.Schema({
+  tasks: String,
+  dates: Number,
+  userid: {
+    type: mongoose.Types.ObjectId,
+    ref: "userschema",
+  },
+  taskstatus:{type: Boolean, default: false}
+});
+
+module.exports = mongooser.model("taskuser", taskSchema);
