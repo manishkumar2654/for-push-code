@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
-const adminSchema= new mongoose.Schema({
-    
-    adminid:String,
+const mongooser = require("mongoose");
+
+const adminhaijo = new mongooser.Schema({
+    id:Number,
+    name:String,
     password:String
+    
 })
 
-module.exports = mongoose.model("admin", adminSchema);
+module.exports = mongooser.model("adminscemass", adminhaijo);
